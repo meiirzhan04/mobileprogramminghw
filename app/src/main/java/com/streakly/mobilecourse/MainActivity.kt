@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.streakly.mobilecourse.ui.theme.MobileCourseTheme
+import com.streakly.mobilecourse.ui.theme.TaskTwoScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +13,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MobileCourseTheme {
-                HomeScreen()
+                /*HomeScreen()*/
+                TaskTwoScreen()
             }
         }
     }
