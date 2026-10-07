@@ -13,10 +13,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             MobileCourseTheme {
                 /*HomeScreen()*/
-                /*BusinessCard()*/
+                BusinessCard()
                 /*ComposeArticle()*/
                 /*TaskManager()*/
-                ComposeQuadrant()
+                /*ComposeQuadrant()*/
             }
         }
     }

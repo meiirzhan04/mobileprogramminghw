@@ -26,9 +26,10 @@ fun BusinessCard() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
-                painter = painterResource(R.drawable.ic_letter),
+                painter = painterResource(R.drawable.ic_android),
                 contentDescription = "",
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier.size(100.dp),
+                tint = Color(0xFF006D3B)
             )
             Text(
                 text = "Meiirzhan Amirzhan",
