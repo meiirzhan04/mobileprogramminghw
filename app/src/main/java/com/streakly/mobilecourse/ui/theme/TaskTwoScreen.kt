@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -46,24 +47,26 @@ fun TaskTwoScreen() {
                 .padding(bottom = 40.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            RowIconWithText(text = "+7 776 786 10 73")
-            RowIconWithText(text = "@meiirzhan")
-            RowIconWithText(text = "amirzhameirzhan@gmail.com")
+            RowIconWithText(text = "+7 776 786 10 73", icon = R.drawable.ic_phone)
+            RowIconWithText(text = "@meiirzhan", icon = R.drawable.ic_share)
+            RowIconWithText(text = "amirzhameirzhan@gmail.com", icon = R.drawable.ic_letter)
         }
     }
 }
 
 @Composable
 private fun RowIconWithText(
-    text: String
+    text: String,
+    icon: Int
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_letter),
+            painter = painterResource(icon),
             contentDescription = "",
+            tint = Color(0xFF006D3B),
             modifier = Modifier.size(20.dp)
         )
         Text(
