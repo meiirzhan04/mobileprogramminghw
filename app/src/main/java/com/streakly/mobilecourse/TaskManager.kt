@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TaskManager(modifier: Modifier = Modifier) {
+fun TaskManager() {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -27,12 +27,10 @@ fun TaskManager(modifier: Modifier = Modifier) {
             painter = painterResource(R.drawable.ic_task_completed),
             contentDescription = ""
         )
-        Spacer(Modifier.height(24.dp))
         Text(
             text = "All tasks completed",
-            fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier.padding(top = 24.dp, bottom = 8.dp)
         )
         Text(
             text = "Nice work!",
