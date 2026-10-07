@@ -15,7 +15,8 @@ class MainActivity : ComponentActivity() {
             MobileCourseTheme {
                 /*HomeScreen()*/
                 /*TaskTwoScreen()*/
-                ComposeArticle()
+                /*ComposeArticle()*/
+                TaskManager()
             }
         }
     }
