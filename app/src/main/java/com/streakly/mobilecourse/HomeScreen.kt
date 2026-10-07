@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -27,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -72,6 +70,7 @@ fun HomeScreen(
                     StateItems(
                         image = R.drawable.lemon_tree,
                         text = R.string.lemon_tree,
+                        contentDescription = R.string.lemon_tree_content_description,
                         onImageClick = {
                             squeezeCount = (2..4).random()
                             currentState = State.Lemon
@@ -83,6 +82,7 @@ fun HomeScreen(
                     StateItems(
                         image = R.drawable.lemon_squeeze,
                         text = R.string.lemon,
+                        contentDescription = R.string.lemon_content_description,
                         onImageClick = {
                             squeezeCount--
                             if (squeezeCount == 0) {
@@ -96,6 +96,7 @@ fun HomeScreen(
                     StateItems(
                         image = R.drawable.lemon_drink,
                         text = R.string.glass_of_lemonade,
+                        contentDescription = R.string.lemonade_content_description,
                         onImageClick = {
                             currentState = State.Empty
                         }
@@ -106,6 +107,7 @@ fun HomeScreen(
                     StateItems(
                         image = R.drawable.lemon_restart,
                         text = R.string.empty_glass,
+                        contentDescription = R.string.empty_glass_content_description,
                         onImageClick = {
                             currentState = State.LemonTree
                         }
@@ -121,6 +123,7 @@ fun StateItems(
     image: Int,
     text: Int,
     onImageClick: () -> Unit,
+    contentDescription: Int,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -137,7 +140,7 @@ fun StateItems(
         ) {
             Image(
                 painter = painterResource(image),
-                contentDescription = "",
+                contentDescription = stringResource(contentDescription),
                 modifier = Modifier.padding(24.dp)
             )
         }
