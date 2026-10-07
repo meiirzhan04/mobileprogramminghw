@@ -1,4 +1,4 @@
-package com.streakly.mobilecourse.ui.theme
+package com.streakly.mobilecourse
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,10 +17,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.streakly.mobilecourse.R
 
 @Composable
-fun TaskTwoScreen() {
+fun BusinessCard() {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier.align(Alignment.Center),
