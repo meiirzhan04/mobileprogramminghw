@@ -13,8 +13,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             MobileCourseTheme {
                 /*HomeScreen()*/
-                BusinessCard()
-                /*ComposeArticle()*/
+                /*BusinessCard()*/
+                ComposeArticle()
                 /*TaskManager()*/
                 /*ComposeQuadrant()*/
             }

@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -25,14 +26,15 @@ fun ComposeArticle() {
     ) {
         Image(
             painter = painterResource(R.drawable.bg_compose_background),
-            contentDescription = ""
+            contentDescription = "",
+            modifier = Modifier.fillMaxWidth()
         )
-        Column(modifier = Modifier.padding(24.dp)) {
+        Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 text = "Jetpack Compose tutorial",
-                fontSize = 20.sp
+                fontSize = 24.sp
             )
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(16.dp))
             Text(
                 text = "Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.",
                 fontSize = 16.sp,
