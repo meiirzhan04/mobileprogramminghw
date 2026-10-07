@@ -16,7 +16,8 @@ class MainActivity : ComponentActivity() {
                 /*HomeScreen()*/
                 /*TaskTwoScreen()*/
                 /*ComposeArticle()*/
-                TaskManager()
+                /*TaskManager()*/
+                ComposeQuadrant()
             }
         }
     }
