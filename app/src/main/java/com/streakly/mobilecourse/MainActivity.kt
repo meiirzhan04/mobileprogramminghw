@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             MobileCourseTheme {
                 /*HomeScreen()*/
-                TaskTwoScreen()
+                /*TaskTwoScreen()*/
+                ComposeArticle()
             }
         }
     }
