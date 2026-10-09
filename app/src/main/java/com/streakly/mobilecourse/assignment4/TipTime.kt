@@ -30,6 +30,7 @@ fun TipTime() {
     val amount = valueFirst.toDoubleOrNull() ?: 0.0
     val tipPercent = valueSecond.toDoubleOrNull() ?: 0.0
     val tip = calculateTip(amount, tipPercent)
+    var isChecked by remember { mutableStateOf(false) }
     LazyColumn(
         modifier = Modifier
             .statusBarsPadding()
@@ -58,6 +59,10 @@ fun TipTime() {
                 modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
                 imeAction = ImeAction.Done
             )
+            RowTextWithSwitch(
+                isChecked = isChecked,
+                onCheckedChange = { isChecked = it }
+            )
             Spacer(Modifier.height(20.dp))
             Text(
                 text = stringResource(R.string.tip_amount, tip),
@@ -67,7 +72,10 @@ fun TipTime() {
     }
 }
 
-private fun calculateTip(amount: Double, tipPercent: Double): String {
-    val tip = tipPercent / 100 * amount
+private fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean = false): String {
+    var tip = tipPercent / 100 * amount
+    if (roundUp) {
+        tip = kotlin.math.ceil(tip)
+    }
     return NumberFormat.getCurrencyInstance().format(tip)
 }
