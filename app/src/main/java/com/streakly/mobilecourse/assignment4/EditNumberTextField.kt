@@ -20,6 +20,7 @@ fun EditNumberTextField(
         onValueChange = onValueChange,
         label = { Text(stringResource(label)) },
         singleLine = true,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        modifier = modifier
     )
 }
