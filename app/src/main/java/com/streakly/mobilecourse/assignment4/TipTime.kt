@@ -1,5 +1,6 @@
 package com.streakly.mobilecourse.assignment4
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -83,8 +84,8 @@ fun TipTime() {
         )
     }
 }
-
-fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean = false): String {
+@VisibleForTesting
+internal fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean = false): String {
     var tip = tipPercent / 100 * amount
     if (roundUp) {
         tip = kotlin.math.ceil(tip)
