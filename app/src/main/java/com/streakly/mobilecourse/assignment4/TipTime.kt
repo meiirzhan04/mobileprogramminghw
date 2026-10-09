@@ -5,12 +5,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,7 +16,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -28,13 +25,17 @@ import java.text.NumberFormat
 
 @Composable
 fun TipTime() {
-    var value by remember { mutableStateOf("") }
-    val amount = value.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount)
+    var valueFirst by remember { mutableStateOf("") }
+    var valueSecond by remember { mutableStateOf("") }
+    val amount = valueFirst.toDoubleOrNull() ?: 0.0
+    val tipPercent = valueSecond.toDoubleOrNull() ?: 0.0
+    var isChecked by remember { mutableStateOf(false) }
+    val tip = calculateTip(amount, tipPercent, isChecked)
+
     LazyColumn(
         modifier = Modifier
             .statusBarsPadding()
-            .padding(horizontal = 40.dp),
+            .padding(40.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -45,12 +46,25 @@ fun TipTime() {
                 textAlign = TextAlign.Start
             )
             Spacer(modifier = Modifier.height(12.dp))
-            TextField(
-                value = value,
-                onValueChange = { value = it },
-                label = { Text(stringResource(R.string.bill_amount)) },
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            EditNumberTextField(
+                value = valueFirst,
+                onValueChange = { valueFirst = it },
+                label = R.string.bill_amount,
+                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
+                imeAction = ImeAction.Next,
+                leadingIcon = R.drawable.ic_money
+            )
+            EditNumberTextField(
+                value = valueSecond,
+                onValueChange = { valueSecond = it},
+                label = R.string.how_was_the_service,
+                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
+                imeAction = ImeAction.Done,
+                leadingIcon = R.drawable.ic_percent
+            )
+            RowTextWithSwitch(
+                isChecked = isChecked,
+                onCheckedChange = { isChecked = it }
             )
             Spacer(Modifier.height(20.dp))
             Text(
@@ -61,7 +75,10 @@ fun TipTime() {
     }
 }
 
-private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
-    val tip = tipPercent / 100 * amount
+private fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean = false): String {
+    var tip = tipPercent / 100 * amount
+    if (roundUp) {
+        tip = kotlin.math.ceil(tip)
+    }
     return NumberFormat.getCurrencyInstance().format(tip)
 }
