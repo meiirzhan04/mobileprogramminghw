@@ -1,4 +1,4 @@
-package com.streakly.mobilecourse
+package com.streakly.mobilecourse.assignment3
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.streakly.mobilecourse.R
 
 @Composable
 fun BusinessCard() {

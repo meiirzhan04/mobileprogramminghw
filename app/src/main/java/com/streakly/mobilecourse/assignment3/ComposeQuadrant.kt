@@ -1,4 +1,4 @@
-package com.streakly.mobilecourse
+package com.streakly.mobilecourse.assignment3
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
