@@ -51,14 +51,16 @@ fun TipTime() {
                 onValueChange = { valueFirst = it },
                 label = R.string.bill_amount,
                 modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
-                imeAction = ImeAction.Next
+                imeAction = ImeAction.Next,
+                leadingIcon = R.drawable.ic_money
             )
             EditNumberTextField(
                 value = valueSecond,
                 onValueChange = { valueSecond = it},
                 label = R.string.how_was_the_service,
                 modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
-                imeAction = ImeAction.Done
+                imeAction = ImeAction.Done,
+                leadingIcon = R.drawable.ic_percent
             )
             RowTextWithSwitch(
                 isChecked = isChecked,
