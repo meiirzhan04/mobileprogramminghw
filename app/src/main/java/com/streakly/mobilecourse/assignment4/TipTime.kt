@@ -35,7 +35,7 @@ fun TipTime() {
     LazyColumn(
         modifier = Modifier
             .statusBarsPadding()
-            .padding(horizontal = 40.dp),
+            .padding(40.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
