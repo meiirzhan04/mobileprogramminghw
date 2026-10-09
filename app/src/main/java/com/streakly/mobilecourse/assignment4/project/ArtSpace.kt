@@ -1,5 +1,6 @@
 package com.streakly.mobilecourse.assignment4.project
 
+import android.widget.Space
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -42,10 +43,12 @@ fun ArtSpace(modifier: Modifier = Modifier) {
             place = stringResource(artWork.placeRes),
             year = artWork.year
         )
+        Spacer(Modifier.weight(1f))
         DisplayController(
             onPreviousClick = { currentIndex = previousIndex(currentIndex, artWorks.size)},
             onNextClick = { currentIndex = nextIndex(currentIndex, artWorks.size)}
         )
+        Spacer(Modifier.height(24.dp))
     }
 }
 
