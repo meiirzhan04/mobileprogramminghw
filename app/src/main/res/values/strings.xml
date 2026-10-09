@@ -16,4 +16,15 @@
     <string name="tip_amount">Tip Amount: %s</string>
     <string name="how_was_the_service">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
+
+    <!-- strings for hw4 project -->
+    <string name="manhattan_bridge_title">Manhattan Bridge</string>
+    <string name="manhattan_bridge_place">DUMBO, Brooklyn, New York</string>
+    <string name="haarlem_title">Windmill De Adriaan</string>
+    <string name="haarlem_place">Haarlem, Netherlands</string>
+    <string name="sprinkenhof_title">Sprinkenhof</string>
+    <string name="sprinkenhof_place">Hamburg, Germany</string>
+    <string name="place_year">%1$s (%2$d)</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>
