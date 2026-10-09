@@ -16,6 +16,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,13 +48,15 @@ fun TipTime() {
                 value = valueFirst,
                 onValueChange = { valueFirst = it },
                 label = R.string.bill_amount,
-                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
+                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
+                imeAction = ImeAction.Next
             )
             EditNumberTextField(
                 value = valueSecond,
                 onValueChange = { valueSecond = it},
                 label = R.string.how_was_the_service,
-                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
+                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth(),
+                imeAction = ImeAction.Done
             )
             Spacer(Modifier.height(20.dp))
             Text(
