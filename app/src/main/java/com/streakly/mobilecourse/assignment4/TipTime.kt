@@ -45,12 +45,11 @@ fun TipTime() {
                 textAlign = TextAlign.Start
             )
             Spacer(modifier = Modifier.height(12.dp))
-            TextField(
+            EditNumberTextField(
                 value = value,
                 onValueChange = { value = it },
-                label = { Text(stringResource(R.string.bill_amount)) },
-                singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                label = R.string.bill_amount,
+                modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
             )
             Spacer(Modifier.height(20.dp))
             Text(
