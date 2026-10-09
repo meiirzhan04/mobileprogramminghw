@@ -10,7 +10,8 @@ import com.streakly.mobilecourse.ui.theme.MobileCourseTheme
 import org.junit.Rule
 import org.junit.Test
 import java.text.NumberFormat
-
+import androidx.compose.ui.test.isToggleable
+import androidx.compose.ui.test.performClick
 class TipUITests {
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -26,6 +27,7 @@ class TipUITests {
         }
         composeTestRule.onNodeWithText("Bill Amount").performTextInput("10")
         composeTestRule.onNodeWithText("Tip Percentage").performTextInput("20")
+        composeTestRule.onNode(isToggleable()).performClick()
 
         val expectedTip = NumberFormat.getCurrencyInstance().format(2)
         composeTestRule.onNodeWithText("Tip Amount: $expectedTip")
