@@ -29,8 +29,9 @@ fun TipTime() {
     var valueSecond by remember { mutableStateOf("") }
     val amount = valueFirst.toDoubleOrNull() ?: 0.0
     val tipPercent = valueSecond.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount, tipPercent)
     var isChecked by remember { mutableStateOf(false) }
+    val tip = calculateTip(amount, tipPercent, isChecked)
+
     LazyColumn(
         modifier = Modifier
             .statusBarsPadding()
