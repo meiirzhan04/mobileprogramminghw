@@ -1,7 +1,7 @@
 package com.streakly.mobilecourse.assignment5.courses.data
 
 import com.streakly.mobilecourse.R
-import com.streakly.mobilecourse.assignment5.courses.model.Topic
+import com.streakly.mobilecourse.assignment5.courses.domain.model.Topic
 
 object DataSource {
     val topics = listOf(

@@ -1,4 +1,4 @@
-package com.streakly.mobilecourse.assignment5.courses.model
+package com.streakly.mobilecourse.assignment5.courses.domain.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
