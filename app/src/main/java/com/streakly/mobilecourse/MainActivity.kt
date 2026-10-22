@@ -7,6 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import com.streakly.mobilecourse.assignment3.ComposeArticle
 import com.streakly.mobilecourse.assignment4.TipTime
 import com.streakly.mobilecourse.assignment4.project.ArtSpace
+import com.streakly.mobilecourse.assignment5.courses.domain.model.Topic
+import com.streakly.mobilecourse.assignment5.courses.presentation.CourseScreen
+import com.streakly.mobilecourse.assignment5.courses.presentation.TopicCard
 import com.streakly.mobilecourse.ui.theme.MobileCourseTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +18,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MobileCourseTheme {
-                ArtSpace()
+                CourseScreen()
             }
         }
     }
