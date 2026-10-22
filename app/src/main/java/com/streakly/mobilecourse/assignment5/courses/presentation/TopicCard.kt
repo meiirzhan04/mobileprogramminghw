@@ -13,6 +13,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
@@ -39,7 +40,6 @@ fun TopicCard(
             )
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
                     .padding(top = 16.dp, start = 16.dp, end = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
@@ -49,7 +49,8 @@ fun TopicCard(
                 )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.ic_grain),
