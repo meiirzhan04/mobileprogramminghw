@@ -10,6 +10,8 @@ import com.streakly.mobilecourse.assignment4.project.ArtSpace
 import com.streakly.mobilecourse.assignment5.courses.domain.model.Topic
 import com.streakly.mobilecourse.assignment5.courses.presentation.CourseScreen
 import com.streakly.mobilecourse.assignment5.courses.presentation.TopicCard
+import com.streakly.mobilecourse.assignment5.superheroes.presentation.SuperheroesApp
+import com.streakly.mobilecourse.assignment5.superheroes.ui.theme.SuperheroesTheme
 import com.streakly.mobilecourse.ui.theme.MobileCourseTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,8 +19,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MobileCourseTheme {
-                CourseScreen()
+            SuperheroesTheme {
+                SuperheroesApp()
             }
         }
     }
