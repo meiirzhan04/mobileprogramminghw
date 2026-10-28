@@ -72,11 +72,3 @@ fun HeroItem(
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun HeroItemPreview() {
-    SuperheroesTheme {
-        HeroItem(hero = HeroesRepository.heroes.first())
-    }
-}

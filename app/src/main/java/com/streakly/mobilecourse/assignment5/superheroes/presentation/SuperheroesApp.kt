@@ -20,7 +20,9 @@ fun SuperheroesApp(
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
-        topBar = { SuperheroesTopAppBar() }
+        topBar = {
+            SuperheroesTopAppBar()
+        }
     ) { innerPadding ->
         HeroesList(
             heroes = HeroesRepository.heroes,
@@ -31,24 +33,13 @@ fun SuperheroesApp(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SuperheroesTopAppBar(
-    modifier: Modifier = Modifier
-) {
+fun SuperheroesTopAppBar() {
     CenterAlignedTopAppBar(
         title = {
             Text(
                 text = stringResource(R.string.superheroes_title),
                 style = MaterialTheme.typography.displayLarge
             )
-        },
-        modifier = modifier
+        }
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun SuperheroesAppPreview() {
-    SuperheroesTheme {
-        SuperheroesApp()
-    }
 }
